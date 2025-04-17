@@ -36,3 +36,20 @@ button {
 button:hover {
   background-color: #4a8d6a;
 }
+
+.logo-header {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.logo-img {
+  width: 120px;
+  height: auto;
+}
+
+.page-title {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #5c3a1e;
+}
