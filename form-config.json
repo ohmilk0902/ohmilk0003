@@ -1,0 +1,52 @@
+{
+  "formFields": [
+    {
+      "name": "name",
+      "label": "姓名",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "contact",
+      "label": "LINE帳號或電話",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "email",
+      "label": "Email",
+      "type": "email",
+      "required": false,
+      "note": "備註聯繫用途"
+    },
+    {
+      "name": "shopee",
+      "label": "蝦皮帳號或訂單編號",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "orderRemark",
+      "label": "備註欄 (整體備註)",
+      "type": "textarea",
+      "required": false
+    },
+    {
+      "name": "timing",
+      "label": "商品製作時效",
+      "type": "radio",
+      "required": true,
+      "options": [
+        { "label": "一般件", "value": "normal" },
+        { "label": "急件", "value": "urgent" }
+      ],
+      "urgentLabel": "希望完成日期"
+    }
+  ],
+  "products": [
+    { "label": "悠遊卡", "value": "悠遊卡" },
+    { "label": "載具鑰匙圈", "value": "載具鑰匙圈" },
+    { "label": "底片", "value": "底片", "doubleFrame": true }
+  ],
+  "maxImagesPerProduct": 60
+}
