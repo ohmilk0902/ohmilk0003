@@ -1,2 +1,25 @@
 <!DOCTYPE html>
-<html><head><title>ohmilk v4.4</title></head><body><h1>圖檔上傳專用</h1></body></html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>丟搞上傳系統 v4.4</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <script src="config/form-config.json" type="application/json" id="form-config"></script>
+  <script src="scripts/form-renderer.js" defer></script>
+  <script src="scripts/upload.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="assets/images/logo.png" alt="logo" style="height: 60px;" />
+    <h1>圖片上傳專用</h1>
+  </header>
+
+  <form id="uploadForm">
+    <div id="formContainer"></div>
+    <div id="productContainer"></div>
+    <button type="submit">送出表單</button>
+  </form>
+
+  <div id="status"></div>
+</body>
+</html>
