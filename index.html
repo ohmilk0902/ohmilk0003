@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <title>丟搞上傳系統 v4.4</title>
   <link rel="stylesheet" href="styles/style.css" />
-  <script src="config/form-config.json" type="application/json" id="form-config"></script>
   <script src="scripts/form-renderer.js" defer></script>
   <script src="scripts/upload.js" defer></script>
 </head>
 <body>
-<header class="logo-header">
-  <img src="logo.png" alt="Logo" class="logo.img">
-  <h1 class="page-title">圖片上傳專用</h1>
-</header>
+
+  <header class="logo-header">
+    <img src="logo.png" alt="Logo" class="logo-img" />
+    <h1 class="page-title">圖片上傳專用</h1>
+  </header>
 
   <form id="uploadForm">
     <div id="formContainer"></div>
@@ -21,5 +21,30 @@
   </form>
 
   <div id="status"></div>
+
+  <!-- 正確寫法：form-config JSON 直接寫在這 -->
+  <script id="form-config" type="application/json">
+  {
+    "fields": [
+      {
+        "name": "username",
+        "label": "姓名",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "orderType",
+        "label": "訂單類型",
+        "type": "radio",
+        "required": true,
+        "options": [
+          { "value": "normal", "label": "一般件" },
+          { "value": "urgent", "label": "急件" }
+        ]
+      }
+    ]
+  }
+  </script>
+
 </body>
 </html>
