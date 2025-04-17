@@ -1,5 +1,288 @@
+/* 全局基底樣式與主題配色 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #f9f5ec; /* 淡咖啡色背景 */
+  color: #4b2e2e;            /* 深咖啡色文字 */
+}
+header {
+  width: 100%;
+}
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8b5e34; /* 深咖啡色頁首背景 */
+  padding: 10px;
+}
+.header-top .top-btn {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #a1713b; /* 較淺的咖啡色按鈕背景 */
+}
+.header-top .top-btn:hover {
+  background-color: #916734;
+}
 
-body { font-family: sans-serif; padding: 20px; background: #fdfaf5; color: #4b2e2e; }
-.logo-section { text-align: center; margin: 20px; }
-.logo { max-width: 100px; }
-.top-btn { background: #a1713b; color: white; padding: 5px 10px; text-decoration: none; margin: 0 5px; border-radius: 4px; }
+.logo-section {
+  text-align: center;
+  padding: 20px 10px;
+}
+.logo-section .logo {
+  max-width: 150px;
+  height: auto;
+}
+.logo-section .logo-caption {
+  font-size: 20px;
+  margin-top: 8px;
+  color: #4b2e2e;
+}
+
+/* 主要內容區最大寬度與內距 */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+.section-title {
+  font-size: 18px;
+  margin: 20px 0 10px;
+  color: #4b2e2e;
+}
+
+/* 表單欄位樣式 */
+#staticFields {
+  display: flex;
+  flex-wrap: wrap;
+}
+.field-group {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.field-group.small {
+  width: 48%;
+  margin-right: 2%;
+}
+.field-group.small:nth-of-type(2n) {
+  margin-right: 0;
+}
+.field-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.field-group input, .field-group textarea, .field-group select {
+  width: 100%;
+  padding: 6px 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.field-group textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+.field-group .note {
+  font-size: 12px;
+  color: #555;
+}
+/* 商品製作時效（一般件/急件）的選項排列 */
+#staticFields .timing-options {
+  display: flex;
+  align-items: center;
+}
+#staticFields .timing-options label {
+  display: inline;
+  font-weight: normal;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+/* 商品上傳模組樣式 */
+#productGroupsContainer {
+  margin-bottom: 15px;
+}
+.product-group {
+  border: 1px solid #d7c7a7;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #fdfaf5;
+}
+.product-group .group-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.product-group .group-header label {
+  font-weight: bold;
+  margin-right: 8px;
+}
+.product-group .group-header select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.product-group .remove-group-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #a00;
+  font-size: 16px;
+  cursor: pointer;
+}
+.product-group .remove-group-btn:hover {
+  color: #d00;
+}
+
+/* 上傳區域（拖曳區）樣式 */
+.upload-area {
+  position: relative;
+  min-height: 80px;
+  border: 2px dashed #a29061;
+  border-radius: 6px;
+  padding: 10px;
+  text-align: center;
+  background-color: #fff8e8;
+  color: #7a6148;
+  cursor: pointer;
+}
+.upload-area.hover {
+  background-color: #ffeecc;
+}
+.upload-area .placeholder {
+  font-size: 14px;
+  color: #7a6148;
+}
+/* 上傳區域在有檔案時隱藏提示文字 */
+.upload-area.has-files .placeholder {
+  display: none;
+}
+
+/* 圖片預覽列表 */
+.preview-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+.image-item {
+  width: 90px;
+  position: relative;
+}
+.thumb-container {
+  position: relative;
+  width: 100%;
+}
+.thumb-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+/* 圖片編號圓形標籤 */
+.img-number {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 10px;
+}
+/* 旋轉及刪除按鈕 */
+.rotate-btn, .remove-btn {
+  position: absolute;
+  top: 2px;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  line-height: 16px;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+.remove-btn {
+  right: 2px;
+}
+.rotate-btn {
+  right: 22px;
+}
+.rotate-btn:hover, .remove-btn:hover {
+  background: rgba(0,0,0,0.7);
+}
+/* 底片商品橫式提示 */
+.double-frame-tip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.8);
+  color: #d00;
+  font-size: 11px;
+  padding: 1px 2px;
+  text-align: center;
+  display: none;
+}
+.image-item.film-landscape .double-frame-tip {
+  display: block;
+}
+/* 每張圖片備註欄 */
+.image-remark {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 2px;
+  font-size: 12px;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 新增商品項目按鈕樣式 */
+.add-product-btn {
+  background-color: #d0b084;
+  border: none;
+  color: #4b2e2e;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.add-product-btn:hover {
+  background-color: #c4a673;
+}
+
+/* 送出按鈕及狀態提示 */
+.submit-section {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.submit-btn {
+  background-color: #3fa276; /* 綠色送出按鈕 */
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.submit-btn:hover {
+  background-color: #349b6a;
+}
+.status-message {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
