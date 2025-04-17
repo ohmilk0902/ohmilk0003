@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>丟搞手作｜圖片上傳專用</title>
-  <link rel="stylesheet" href="樣式.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="logo-section">
-    <img src="https://drive.google.com/uc?export=view&id=1f93ObtXnCTf5evvzCzp8nGyCvDqAcNjd" alt="丟搞手作LOGO" class="logo" />
-    <h1>圖片上傳專用</h1>
+    <img src="https://drive.google.com/uc?export=view&id=1f93ObtXnCTf5evvzCzp8nGyCvDqAcNjd" alt="Logo">
+    <h1>上傳圖檔專用</h1>
   </div>
-  <form id="upload-form">
-    <input type="file" name="images" multiple accept="image/*,application/pdf,.psd,.ai" />
-    <textarea name="note" placeholder="請輸入備註，例如：不要去背／這款做2個"></textarea>
-    <button type="submit">送出上傳</button>
+  <form id="uploadForm">
+    <section class="block">
+      <label class="block-title">商品製作時效（必選）</label>
+      <div class="radio-group">
+        <label><input type="radio" name="workType" value="normal" required>🔘 一般件，我已知曉工作天不含假日</label>
+        <div class="note">出貨天數依賣場說明為主，不含配送時間，實際配送以超商為主<br>7-11、全家約2～3天到（較快） / OK、萊爾富約3～5天 / 蝦皮店到店、店到家約3～10天</div>
+        <label><input type="radio" name="workType" value="urgent">🔘 急件</label>
+        <div id="urgentDateWrapper" class="note" style="display:none;">
+          <input type="date" name="urgentDate" required>
+          <div>請先告知商品與數量，我們會回覆是否能接單。急件需加收費用</div>
+        </div>
+      </div>
+    </section>
+    <section class="block">
+      <label>Email（非必填，聊聊聯繫不到時使用）<input type="email" name="email" placeholder="非必填，聊聊聯繫不到時使用"></label>
+      <p class="hint">圖檔上傳系統不會使用，也可以透過LINE直接傳圖唷～ <a href="https://lin.ee/lk48B15" target="_blank">點我加LINE</a></p>
+      <label>蝦皮帳號或訂單編號<input type="text" name="orderId" required></label>
+    </section>
+    <div id="productArea"></div>
+    <button type="button" id="addProductBtn" class="btn-add">➕ 新增一款商品</button>
+    <button type="submit" id="submitBtn" class="btn-submit">送出訂單</button>
   </form>
+  <script src="script.js"></script>
 </body>
 </html>
