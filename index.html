@@ -1,33 +1,44 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
-  <title>Ohmilk 圖片上傳 v4.2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ohmilk 圖片上傳系統 v4.2</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
+    <!-- 頁首上方的兩個外部連結按鈕 -->
     <div class="header-top">
-      <a class="top-btn line-btn" href="https://lin.ee/lk48B15" target="_blank">點我加入LINE</a>
-      <a class="top-btn shopee-btn" href="https://shopee.tw/ohmilk0003" target="_blank">點我進蝦皮賣場</a>
+      <a class="top-btn line-btn" href="#" target="_blank">點我加入LINE</a>
+      <a class="top-btn shopee-btn" href="#" target="_blank">點我進蝦皮賣場</a>
     </div>
+    <!-- LOGO 置中區域 -->
     <div class="logo-section">
-      <img src="logo.png" alt="圖片上傳專用" class="logo" />
+      <img src="assets/logo.png" alt="圖片上傳專用" class="logo" />
       <h1 class="logo-caption">圖片上傳專用</h1>
     </div>
   </header>
+  
   <main>
     <form id="uploadForm">
-      <input name="name" placeholder="姓名" required />
-      <input name="contact" placeholder="LINE 或電話" required />
-      <input name="email" placeholder="Email（非必填）" />
-      <input name="orderId" placeholder="訂單編號或蝦皮帳號" required />
-      <textarea name="note" placeholder="備註"></textarea>
-      <input type="file" id="fileInput" multiple />
-      <button type="submit">送出</button>
+      <!-- 靜態表單欄位將由 script.js 根據 form-config.json 動態插入 -->
+      <div id="staticFields"></div>
+      <!-- 商品圖片上傳區段標題 -->
+      <h2 class="section-title">商品圖片上傳</h2>
+      <!-- 商品模組群組容器 -->
+      <div id="productGroupsContainer"></div>
+      <!-- 新增商品項目按鈕 -->
+      <button type="button" id="addProductBtn" class="add-product-btn">＋ 新增商品</button>
+      <!-- 送出按鈕與狀態提示 -->
+      <div class="submit-section">
+        <button type="submit" id="submitBtn" class="submit-btn">送出</button>
+        <span id="statusMessage" class="status-message"></span>
+      </div>
     </form>
-    <div id="status"></div>
   </main>
-  <script src="upload.js"></script>
+
+  <!-- 引入前端互動腳本 -->
+  <script src="script.js"></script>
 </body>
 </html>
