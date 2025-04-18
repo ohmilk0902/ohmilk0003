@@ -1,5 +1,15 @@
 // 讀取 JSON 配置
-const config = JSON.parse(document.getElementById('form-config').textContent);
+document.addEventListener('DOMContentLoaded', async () => {
+  let config;
+  try {
+    const resp = await fetch('../config/form-config.json');
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    config = await resp.json();
+  } catch (e) {
+    console.error('載入表單配置失敗：', e);
+    document.getElementById('status').textContent = '載入配置檔失敗，請稍後重試';
+    return;
+  }
 
 function createField(field, container, idx) {
   const id = idx != null ? `${field.name}_${idx}` : field.name;
