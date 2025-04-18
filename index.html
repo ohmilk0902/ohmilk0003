@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Ohmilk v4.5 圖檔上傳系統</title>
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/style.css" />
   <script src="config/form-config.json" type="application/json" id="form-config"></script>
   <script src="scripts/form-renderer.js" defer></script>
   <script src="scripts/upload.js" defer></script>
 </head>
 <body>
-  <header class="top-bar">
-    <a class="btn line" href="https://lin.ee/lk48B15" target="_blank">點我加入LINE</a>
-    <a class="btn shopee" href="https://shopee.tw/ohmilk0003" target="_blank">點我進蝦皮賣場</a>
-  </header>
-
-  <header class="logo-header">
-    <img src="assets/images/logo.png" alt="Logo" class="logo-img">
-    <h1 class="page-title">圖片上傳專用</h1>
+  <header>
+    <div class="top-bar">
+      <a class="btn line" href="https://lin.ee/lk48B15" target="_blank">點我加入LINE</a>
+      <a class="btn shopee" href="https://shopee.tw/ohmilk0003" target="_blank">點我進蝦皮賣場</a>
+    </div>
+    <img src="assets/images/logo.png" alt="Logo" class="logo" />
+    <h1>上傳圖檔專用</h1>
   </header>
 
   <form id="uploadForm">
-    <!-- form-renderer.js 會自動插入所有欄位和「新增商品」按鈕 -->
+    <!-- 表單欄位與商品區塊由 form-renderer.js 自動渲染 -->
   </form>
 
   <div id="status" class="status"></div>
