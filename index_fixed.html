@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>圖片上傳系統 v4.5</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <header class="logo-header">
+    <img src="assets/images/logo.png" alt="Logo" class="logo-img" />
+    <h1 class="page-title">圖片上傳專用</h1>
+  </header>
+
+  <form id="uploadForm">
+    <section class="production-time">
+      <h2>商品製作時效（必選）</h2>
+      <p class="time-note">
+        「出貨天數」依賣場說明為主，不含配送時間，實際配送以超商為主。
+        <br>7-11、全家約 2–3 天（較快）／OK、萊爾富約 3–5 天／蝦皮約 2–4 天。
+      </p>
+      <label><input type="radio" name="urgency" value="regular" required> 一般件（越快越好）</label>
+      <label><input type="radio" name="urgency" value="urgent"> 急件（需指定日期）</label>
+      <input type="date" name="rushDate" id="rushDate">
+    </section>
+
+    <!-- 其他表單項目 & 商品項目渲染點 -->
+    <div id="formContainer"></div>
+    <div id="productContainer"></div>
+  </form>
+
+  <!-- script 移到底部，避免 DOM 未渲染完成 -->
+  <script src="scripts/form-renderer.js"></script>
+  <script src="scripts/upload.js"></script>
+</body>
+</html>
