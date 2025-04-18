@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <title>圖片上傳系統 v4.5</title>
+
+  <!-- 全局樣式 -->
   <link rel="stylesheet" href="styles/style.css" />
+
+  <!-- JSON 配置由渲染器 fetch 進來，不再用 <script> 標籤引入 -->
+
+  <!-- 渲染表單（先載入） -->
   <script src="scripts/form-renderer.js" defer></script>
+  <!-- 上傳邏輯（後載入） -->
   <script src="scripts/upload.js" defer></script>
 </head>
 <body>
@@ -14,18 +21,21 @@
   </header>
 
   <form id="uploadForm">
+    <!-- 商品製作時效 -->
     <section class="production-time">
       <h2>商品製作時效（必選）</h2>
       <p class="time-note">
-        「出貨天數」依賣場說明為主，不含配送時間，實際配送以超商為主：<br />
+        「出貨天數」依賣場說明為主，不含配送時間，實際配送以超商為主：<br>
         7‑11、全家約2‑3天（較快）／OK、萊爾富約3‑5天／蝦皮店到店、店到家約3‑10天
       </p>
-      <label><input type="radio" name="urgency" value="normal" required /> 一般件，我已知曉工作天不含假日</label>
-      <label><input type="radio" name="urgency" value="rush" /> 急件（請於下方選擇期望到貨日期）</label>
+      <label><input type="radio" name="urgency" value="normal" required> 一般件，我已知曉工作天不含假日</label>
+      <label><input type="radio" name="urgency" value="rush"> 急件（請於下方選擇期望到貨日期）</label>
       <input type="date" name="rushDate" id="rushDate" style="display:none;" />
     </section>
 
+    <!-- 其余表單項目 & 商品項目渲染點 -->
     <div id="formContainer"></div>
+    <div id="productContainer"></div>
 
     <button type="submit">送出表單</button>
   </form>
