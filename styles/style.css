@@ -1,0 +1,62 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #fdf9f2;
+  padding: 20px;
+  color: #433422;
+}
+
+.logo-header {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.logo-img {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+}
+.page-title {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #5c3a1e;
+}
+
+.production-time {
+  margin-bottom: 24px;
+}
+.production-time h2 {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+}
+.time-note {
+  font-size: 0.9em;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+input[type="text"],
+input[type="date"],
+input[type="file"] {
+  padding: 6px;
+  margin-top: 5px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #68b089;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #4a8d6a;
+}

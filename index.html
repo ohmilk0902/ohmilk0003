@@ -1,50 +1,36 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <title>丟搞上傳系統 v4.4</title>
-  <link rel="stylesheet" href="styles/style.css" />
+  <meta charset="UTF-8">
+  <title>圖片上傳系統 v4.5</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="config/form-config.json" type="application/json" id="form-config"></script>
   <script src="scripts/form-renderer.js" defer></script>
   <script src="scripts/upload.js" defer></script>
 </head>
 <body>
-
   <header class="logo-header">
-    <img src="logo.png" alt="Logo" class="logo-img" />
+    <img src="assets/images/logo.png" alt="Logo" class="logo-img">
     <h1 class="page-title">圖片上傳專用</h1>
   </header>
 
   <form id="uploadForm">
+    <section class="production-time">
+      <h2>商品製作時效（必選）</h2>
+      <p class="time-note">
+        「出貨天數」依賣場說明為主，不含配送時間，實際配送以超商為主：<br>
+        7‑11、全家約2‑3天（較快）／OK、萊爾富約3‑5天／蝦皮店到店、店到家約3‑10天
+      </p>
+      <label><input type="radio" name="urgency" value="normal" required> 一般件，我已知曉工作天不含假日</label>
+      <label><input type="radio" name="urgency" value="rush"> 急件（請於下方選擇期望到貨日期）</label>
+      <input type="date" name="rushDate" id="rushDate" style="display:none;">
+    </section>
+
     <div id="formContainer"></div>
     <div id="productContainer"></div>
     <button type="submit">送出表單</button>
   </form>
 
   <div id="status"></div>
-
-  <!-- 正確寫法：form-config JSON 直接寫在這 -->
-  <script id="form-config" type="application/json">
-  {
-    "fields": [
-      {
-        "name": "username",
-        "label": "姓名",
-        "type": "text",
-        "required": true
-      },
-      {
-        "name": "orderType",
-        "label": "訂單類型",
-        "type": "radio",
-        "required": true,
-        "options": [
-          { "value": "normal", "label": "一般件" },
-          { "value": "urgent", "label": "急件" }
-        ]
-      }
-    ]
-  }
-  </script>
-
 </body>
 </html>

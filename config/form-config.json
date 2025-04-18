@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "title": "悠遊卡／一卡通",
+      "accept": [".png",".jpg",".pdf",".ai",".psd"],
+      "maxUnits": 5,
+      "noteHint": "圖片會視情況裁切、填色，若有指定排版方式請備註（滿版、留白、是否印卡號）"
+    },
+    {
+      "title": "底片組",
+      "accept": [".png",".jpg",".pdf"],
+      "maxUnits": 30,
+      "noteHint": "橫式佔2格、直式佔1格，最多30格，點擊可旋轉"
+    },
+    {
+      "title": "客製化貼紙",
+      "accept": [".png",".jpg",".pdf",".ai",".psd"],
+      "maxUnits": 60,
+      "noteHint": "請備註尺寸或需求（ex. 滿版裁切）"
+    },
+    {
+      "title": "圓形徽章",
+      "accept": [".png",".jpg",".pdf"],
+      "maxUnits": 10,
+      "noteHint": "請備註尺寸（32mm/44mm/58mm）及留白邊緣"
+    },
+    {
+      "title": "氣囊支架",
+      "accept": [".png",".jpg",".pdf"],
+      "maxUnits": 60,
+      "noteHint": "背景若需透明或留白請註明"
+    },
+    {
+      "title": "明信片",
+      "accept": [".png",".jpg",".pdf",".ai"],
+      "maxUnits": 60,
+      "noteHint": "可註明正反面、加文字等"
+    },
+    {
+      "title": "無框畫",
+      "accept": [".png",".jpg",".pdf"],
+      "maxUnits": 60,
+      "noteHint": "請備註作品尺寸與掛勾方向"
+    },
+    {
+      "title": "AI繪圖／Q版肖像",
+      "accept": [".png",".jpg",".pdf",".ai"],
+      "maxUnits": 5,
+      "noteHint": "請上傳清楚臉部照片，背景、風格可備註"
+    }
+  ]
+}
