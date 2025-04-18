@@ -1,50 +1,60 @@
-document.addEventListener('DOMContentLoaded', async () => {
-  let config;
+document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const resp = await fetch('config/form-config.json');
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    config = await resp.json();
-  } catch (e) {
-    console.error('載入表單配置失敗：', e);
-    document.getElementById('status').textContent = '表單載入失敗，請稍後重試';
-    return;
+    const response = await fetch("config/form-config.json");
+    const config = await response.json();
+
+    const formContainer = document.getElementById("formContainer");
+
+    config.fields.forEach((field) => {
+      const fieldElement = createField(field);
+      formContainer.appendChild(fieldElement);
+    });
+  } catch (error) {
+    console.error("無法載入表單配置：", error);
   }
-
-  const formContainer = document.getElementById('formContainer');
-  const productContainer = document.getElementById('productContainer');
-
-  // 建立一般欄位
-  config.fields.forEach((field, i) => {
-    if (field.type !== 'product') {
-      createField(field, formContainer, null);
-    }
-  });
-
-  // 新增第一個商品區塊
-  addProductBlock();
-
-  // 綁「新增商品」按鈕
-  document.getElementById('uploadForm').addEventListener('click', e => {
-    if (e.target.id === 'addProduct') {
-      e.preventDefault();
-      addProductBlock();
-    }
-  });
-
-  function addProductBlock() {
-    const idx = productContainer.children.length + 1;
-    const wrapper = document.createElement('section');
-    wrapper.className = 'product-block';
-    wrapper.innerHTML = `
-      <h3>第 ${idx} 款商品</h3>
-      <button id="addProduct" type="button">+ 新增一款商品</button>
-    `;
-    productContainer.appendChild(wrapper);
-    // render each product field under wrapper
-    config.fields.filter(f => f.type === 'product').forEach(f =>
-      createField(f, wrapper, idx)
-    );
-  }
-
-  // createField 逻辑（略，可用你原本的，每个 field.type case 下做 input/dropzone）
 });
+
+// ✅ 建立欄位 DOM 元素
+function createField(field) {
+  const section = document.createElement("section");
+  section.classList.add("form-section");
+
+  const label = document.createElement("label");
+  label.textContent = field.label;
+
+  if (field.type === "radio") {
+    const group = document.createElement("div");
+    group.classList.add("radio-group");
+
+    field.options.forEach(opt => {
+      const radio = document.createElement("input");
+      radio.type = "radio";
+      radio.name = field.name;
+      radio.value = opt.value;
+      if (field.required) radio.required = true;
+
+      const radioLabel = document.createElement("span");
+      radioLabel.textContent = opt.label;
+
+      const wrapper = document.createElement("label");
+      wrapper.appendChild(radio);
+      wrapper.appendChild(radioLabel);
+
+      group.appendChild(wrapper);
+    });
+
+    section.appendChild(label);
+    section.appendChild(group);
+  } else {
+    const input = document.createElement("input");
+    input.type = field.type || "text";
+    input.name = field.name;
+    if (field.required) input.required = true;
+    input.placeholder = field.placeholder || "";
+
+    section.appendChild(label);
+    section.appendChild(input);
+  }
+
+  return section;
+}
