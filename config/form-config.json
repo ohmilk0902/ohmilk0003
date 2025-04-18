@@ -1,52 +1,72 @@
 {
-  "products": [
+  "version": "4.5",
+  "fields": [
+    { "type": "text",     "name": "name",     "label": "姓名",                  "required": true },
+    { "type": "text",     "name": "contact",  "label": "LINE帳號或電話",        "required": true },
+    { "type": "email",    "name": "email",    "label": "Email（非必填）",        "required": false, "placeholder": "聯絡不到時使用" },
+    { "type": "text",     "name": "orderId",  "label": "蝦皮帳號或訂單編號",    "required": true },
     {
-      "title": "悠遊卡／一卡通",
-      "accept": [".png",".jpg",".pdf",".ai",".psd"],
-      "maxUnits": 5,
-      "noteHint": "圖片會視情況裁切、填色，若有指定排版方式請備註（滿版、留白、是否印卡號）"
+      "type": "radio",
+      "name": "urgency",
+      "label": "商品製作時效（必選）",
+      "options": [
+        { "label": "一般件，我已知曉工作天不含假日", "value": "normal" },
+        { "label": "急件（填寫期望收到日期）",      "value": "rush"  }
+      ]
     },
     {
-      "title": "底片組",
-      "accept": [".png",".jpg",".pdf"],
-      "maxUnits": 30,
-      "noteHint": "橫式佔2格、直式佔1格，最多30格，點擊可旋轉"
+      "type": "date",
+      "name": "rushDate",
+      "label": "期望收到日期",
+      "showIf": { "urgency": "rush" }
     },
     {
-      "title": "客製化貼紙",
-      "accept": [".png",".jpg",".pdf",".ai",".psd"],
-      "maxUnits": 60,
-      "noteHint": "請備註尺寸或需求（ex. 滿版裁切）"
-    },
-    {
-      "title": "圓形徽章",
-      "accept": [".png",".jpg",".pdf"],
-      "maxUnits": 10,
-      "noteHint": "請備註尺寸（32mm/44mm/58mm）及留白邊緣"
-    },
-    {
-      "title": "氣囊支架",
-      "accept": [".png",".jpg",".pdf"],
-      "maxUnits": 60,
-      "noteHint": "背景若需透明或留白請註明"
-    },
-    {
-      "title": "明信片",
-      "accept": [".png",".jpg",".pdf",".ai"],
-      "maxUnits": 60,
-      "noteHint": "可註明正反面、加文字等"
-    },
-    {
-      "title": "無框畫",
-      "accept": [".png",".jpg",".pdf"],
-      "maxUnits": 60,
-      "noteHint": "請備註作品尺寸與掛勾方向"
-    },
-    {
-      "title": "AI繪圖／Q版肖像",
-      "accept": [".png",".jpg",".pdf",".ai"],
-      "maxUnits": 5,
-      "noteHint": "請上傳清楚臉部照片，背景、風格可備註"
+      "type": "textarea",
+      "name": "note",
+      "label": "備註欄（整體備註）",
+      "required": false
     }
-  ]
+  ],
+  "productTypes": [
+    "底片",
+    "悠遊卡／一卡通",
+    "載具鑰匙圈",
+    "姓名貼",
+    "悠遊卡貼紙",
+    "杯墊",
+    "掛勾",
+    "磁吸氣囊支架",
+    "防水耐曬造型車貼",
+    "一般貼紙／圖鑑貼紙",
+    "木質鑰匙圈",
+    "壓克力立牌",
+    "無框畫",
+    "Q板手繪／AI繪圖",
+    "壓克力磁鐵",
+    "明信片"
+  ],
+  "product": {
+    "maxFiles": 60,
+    "fields": [
+      {
+        "type": "select",
+        "name": "type",
+        "label": "商品種類",
+        "optionsSource": "productTypes"
+      },
+      {
+        "type": "file",
+        "name": "images",
+        "label": "上傳檔案",
+        "accept": [".jpg",".jpeg",".png",".gif",".pdf",".psd",".ai"],
+        "preview": true,
+        "maxCount": 60
+      },
+      {
+        "type": "textarea",
+        "name": "note",
+        "label": "商品備註（如：不要切到圖、滿版等提示文字）"
+      }
+    ]
+  }
 }
