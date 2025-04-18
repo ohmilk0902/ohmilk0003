@@ -2,35 +2,27 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>圖片上傳系統 v4.5</title>
+  <title>Ohmilk v4.5 圖檔上傳系統</title>
   <link rel="stylesheet" href="styles/style.css">
   <script src="config/form-config.json" type="application/json" id="form-config"></script>
   <script src="scripts/form-renderer.js" defer></script>
   <script src="scripts/upload.js" defer></script>
 </head>
 <body>
+  <header class="top-bar">
+    <a class="btn line" href="https://lin.ee/lk48B15" target="_blank">點我加入LINE</a>
+    <a class="btn shopee" href="https://shopee.tw/ohmilk0003" target="_blank">點我進蝦皮賣場</a>
+  </header>
+
   <header class="logo-header">
     <img src="assets/images/logo.png" alt="Logo" class="logo-img">
     <h1 class="page-title">圖片上傳專用</h1>
   </header>
 
   <form id="uploadForm">
-    <section class="production-time">
-      <h2>商品製作時效（必選）</h2>
-      <p class="time-note">
-        「出貨天數」依賣場說明為主，不含配送時間，實際配送以超商為主：<br>
-        7‑11、全家約2‑3天（較快）／OK、萊爾富約3‑5天／蝦皮店到店、店到家約3‑10天
-      </p>
-      <label><input type="radio" name="urgency" value="normal" required> 一般件，我已知曉工作天不含假日</label>
-      <label><input type="radio" name="urgency" value="rush"> 急件（請於下方選擇期望到貨日期）</label>
-      <input type="date" name="rushDate" id="rushDate" style="display:none;">
-    </section>
-
-    <div id="formContainer"></div>
-    <div id="productContainer"></div>
-    <button type="submit">送出表單</button>
+    <!-- form-renderer.js 會自動插入所有欄位和「新增商品」按鈕 -->
   </form>
 
-  <div id="status"></div>
+  <div id="status" class="status"></div>
 </body>
 </html>
