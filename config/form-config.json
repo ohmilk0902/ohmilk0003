@@ -1,72 +1,34 @@
 {
   "version": "4.5",
   "fields": [
-    { "type": "text",     "name": "name",     "label": "姓名",                  "required": true },
-    { "type": "text",     "name": "contact",  "label": "LINE帳號或電話",        "required": true },
-    { "type": "email",    "name": "email",    "label": "Email（非必填）",        "required": false, "placeholder": "聯絡不到時使用" },
-    { "type": "text",     "name": "orderId",  "label": "蝦皮帳號或訂單編號",    "required": true },
+    { "type": "text", "name": "name", "label": "姓名", "required": true },
+    { "type": "text", "name": "contact", "label": "LINE 帳號或電話", "required": true },
+    { "type": "email", "name": "email", "label": "Email（非必填，聊聊聯繫不到時）" },
+    { "type": "text", "name": "orderId", "label": "蝦皮帳號或訂單編號", "required": true },
     {
-      "type": "radio",
-      "name": "urgency",
-      "label": "商品製作時效（必選）",
+      "type": "product",
+      "name": "products",
+      "label": "商品種類",
+      "maxFiles": 60,
+      "note": "圖檔上傳系統不會使用，也可以透過LINE直接傳圖唷～ 點我加LINE",
+      "link": "https://lin.ee/lk48B15",
       "options": [
-        { "label": "一般件，我已知曉工作天不含假日", "value": "normal" },
-        { "label": "急件（填寫期望收到日期）",      "value": "rush"  }
+        "悠遊卡/一卡通",
+        "載具鑰匙圈",
+        "姓名貼",
+        "悠遊卡貼紙",
+        "杯墊",
+        "掛勾",
+        "磁吸氣囊支架",
+        "防水耐曬造型車貼",
+        "一般貼紙/圖鑑貼紙",
+        "木質鑰匙圈",
+        "壓克力立牌",
+        "無框畫",
+        "Q板手繪/AI繪圖",
+        "壓克力磁鐵",
+        "明信片"
       ]
-    },
-    {
-      "type": "date",
-      "name": "rushDate",
-      "label": "期望收到日期",
-      "showIf": { "urgency": "rush" }
-    },
-    {
-      "type": "textarea",
-      "name": "note",
-      "label": "備註欄（整體備註）",
-      "required": false
     }
-  ],
-  "productTypes": [
-    "底片",
-    "悠遊卡／一卡通",
-    "載具鑰匙圈",
-    "姓名貼",
-    "悠遊卡貼紙",
-    "杯墊",
-    "掛勾",
-    "磁吸氣囊支架",
-    "防水耐曬造型車貼",
-    "一般貼紙／圖鑑貼紙",
-    "木質鑰匙圈",
-    "壓克力立牌",
-    "無框畫",
-    "Q板手繪／AI繪圖",
-    "壓克力磁鐵",
-    "明信片"
-  ],
-  "product": {
-    "maxFiles": 60,
-    "fields": [
-      {
-        "type": "select",
-        "name": "type",
-        "label": "商品種類",
-        "optionsSource": "productTypes"
-      },
-      {
-        "type": "file",
-        "name": "images",
-        "label": "上傳檔案",
-        "accept": [".jpg",".jpeg",".png",".gif",".pdf",".psd",".ai"],
-        "preview": true,
-        "maxCount": 60
-      },
-      {
-        "type": "textarea",
-        "name": "note",
-        "label": "商品備註（如：不要切到圖、滿版等提示文字）"
-      }
-    ]
-  }
+  ]
 }
