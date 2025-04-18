@@ -1,10 +1,29 @@
 {
   "version": "4.5",
   "fields": [
-    { "type": "text", "name": "name", "label": "姓名", "required": true },
-    { "type": "text", "name": "contact", "label": "LINE 帳號或電話", "required": true },
-    { "type": "email", "name": "email", "label": "Email（非必填，聊聊聯繫不到時）" },
-    { "type": "text", "name": "orderId", "label": "蝦皮帳號或訂單編號", "required": true },
+    {
+      "type": "text",
+      "name": "name",
+      "label": "姓名",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "contact",
+      "label": "LINE 帳號或電話",
+      "required": true
+    },
+    {
+      "type": "email",
+      "name": "email",
+      "label": "Email（非必填，聊聊聯繫不到時）"
+    },
+    {
+      "type": "text",
+      "name": "orderId",
+      "label": "蝦皮帳號或訂單編號",
+      "required": true
+    },
     {
       "type": "product",
       "name": "products",
